@@ -4,22 +4,23 @@
 
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
-      <h1 class="display-4">Fluid jumbotron</h1>
-      <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+      <h1 class="display-4">Welcome To Crypto News Network!</h1>
+      <p class="lead">Your Source For Up To The Minute Curreny and BlockChain News!</p>
     </div>
   </div>
 
-
+{% load to_and %}
+{% load three_dot %}
 <div class="container">
     <div class="row">
         {% for x in api.Data %}
-        <div class="col-sm-4 col-xs-6">
-        <div class="card" style="width: 18rem;">
+        <div class="col-12 col-sm-12 col-md-4">
+        <div class="card" style="width: 100%;">
             <img src="{{ x.imageurl }}" class="card-img-top" alt="{{ x.source }}">
             <div class="card-body">
               <h5 class="card-title">{{ x.title }}</h5>
-              <p class="card-text"> {{ x.body}} </p>
-              <a href="{{ x.url }}" class="btn btn-primary">Read More...</a>
+              <p class="card-text"> {{ x.body|to_and|three_dot }}. </p>
+              <a href="{{ x.url }}" target ="_blank" class="btn btn-primary">Read More...</a>
             </div>
           </div>
           <br/>
