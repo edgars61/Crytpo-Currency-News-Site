@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
+{{ price }}
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
       <h1 class="display-4">Welcome To Crypto News Network!</h1>
@@ -16,7 +16,7 @@
         {% for x in api.Data %}
         <div class="col-12 col-sm-12 col-md-4">
         <div class="card" style="width: 100%;">
-            <img src="{{ x.imageurl }}" class="card-img-top" alt="{{ x.source }}">
+            <img src="{{ x.imageurl }}"class="card-img-top" alt="{{ x.source }}">
             <div class="card-body">
               <h5 class="card-title">{{ x.title }}</h5>
               <p class="card-text"> {{ x.body|to_and|three_dot }}. </p>
